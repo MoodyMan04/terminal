@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TERMINAL v0.1</title>
+    <link rel="stylesheet" href="css/terminal.css" />
+    <link rel="stylesheet" href="css/effects.css" />
+  </head>
+  <body>
+    <main id="screen">
+      <div id="output" aria-live="polite"></div>
+      <div id="input-line" hidden>
+        <span id="prompt">&gt;</span>
+        <span id="typed"></span>
+        <span id="cursor"></span>
+      </div>
+    </main>
+
+    <!-- Offscreen Input for mobile -->
+    <input
+      id="capture"
+      type="text"
+      autocomplete="off"
+      autocapitalize="off"
+      autocorrect="off"
+      spellcheck="false"
+      aria-label="terminal input"
+    />
+
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

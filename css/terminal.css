@@ -1,0 +1,109 @@
+:root {
+  --bg: #0a0800;
+  --fg: #e8c547;
+  --fg-dim: #8f7a22;
+  --fg-bright: #fff3b0;
+  --error: #ff6a4d;
+  --glow-rgb: 232, 197, 71;
+  --font: "Courier New", Courier, "Lucida Console", monospace;
+  --size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg);
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: var(--size);
+  line-height: 1.4;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  cursor: default;
+}
+
+#screen {
+  max-width: 90ch;
+  margin: 0 auto;
+  padding: 24px 20px 120px;
+}
+
+.line {
+  white-space: pre-wrap;
+  word-break: break-word;
+  min-height: 1.4em;
+}
+
+.line.echo {
+  color: var(--fg-bright);
+}
+.line.system {
+  color: var(--fg-dim);
+}
+.line.choice {
+  color: var(--fg-bright);
+  padding-left: 2ch;
+}
+.line.error {
+  color: var(--error);
+}
+.line.code {
+  color: var(--fg-bright);
+  font-weight: bold;
+}
+
+#input-line {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+#prompt {
+  margin-right: 1ch;
+}
+
+#cursor {
+  display: inline-block;
+  width: 1ch;
+  height: 1.1em;
+  margin-left: 1px;
+  background: var(--fg);
+  transform: translateY(0.15em);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+#capture {
+  position: fixed;
+  top: 0;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+::selection {
+  background: transparent;
+}
