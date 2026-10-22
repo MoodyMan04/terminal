@@ -1,9 +1,9 @@
 :root {
-  --crt-scanline: 0.22; /* Scanline Darkness */
-  --crt-corner: 5vmin; /* Screen Corners */
+  --crt-scanline: 0.22;
+  --crt-corner: 5vmin;
 }
 
-/* ---------- Scanlines ---------- */
+/* Scanlines */
 body::before {
   content: "";
   position: fixed;
@@ -18,7 +18,7 @@ body::before {
   );
 }
 
-/* ---------- Reflection ---------- */
+/* Reflection */
 body::after {
   content: "";
   position: fixed;
@@ -38,7 +38,7 @@ body::after {
     );
 }
 
-/* ---------- Screen Edge ---------- */
+/* Screen Edge */
 html::after {
   content: "";
   position: fixed;
@@ -52,7 +52,7 @@ html::after {
     inset 0 0 3vmin rgba(0, 0, 0, 0.85);
 }
 
-/* ---------- Rolling Scan ---------- */
+/* Rolling Scan */
 html::before {
   content: "";
   position: fixed;
@@ -80,7 +80,7 @@ html::before {
   }
 }
 
-/* ---------- Glow, Fringe, Flicker ---------- */
+/* Glow, Fringe, Flicker */
 #screen {
   text-shadow:
     -1px 0 rgba(255, 0, 60, 0.3),
@@ -108,7 +108,7 @@ html::before {
   }
 }
 
-/* ---------- Accessibility ---------- */
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   html::before,
   #screen {
