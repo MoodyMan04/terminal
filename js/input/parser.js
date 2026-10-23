@@ -1,9 +1,9 @@
 // PARSER. Defines raw text from input as a "Choice" or a "Command"
 
 // Can be parsed as:
-// type: empty
-// type: choice, number: {NUMBER}
-// type: command, word: {COMMAND}, args: [{TEXT AFTER COMMAND}]
+// { type: "empty', {RAW OBJECT} }
+// { type: "choice", number: {NUMBER} }
+// { type: "command", word: {COMMAND}, args: [{TEXT AFTER COMMAND}] }
 
 export function parse(raw) {
   const text = raw.trim().replace(/\s+/g, " ");
