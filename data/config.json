@@ -1,0 +1,12 @@
+{
+  "title": "TERMINAL",
+  "prompt": ">",
+  "typingSpeed": 18,
+  "start": "boot/boot/boot",
+  "scenes": ["boot/boot", "interloper01/dungeon"],
+  "boot": [
+    "TERMINAL v0.1",
+    "Type a number to choose. Type help for commands.",
+    ""
+  ]
+}
