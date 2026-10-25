@@ -1,0 +1,7 @@
+{
+  "YELLOWVISITOR0101": {
+    "at": "boot/boot/interloper01_connect",
+    "text": ["Establishing connection with INTERLOPER_01..."],
+    "goto": "interloper01/dungeon/start"
+  }
+}

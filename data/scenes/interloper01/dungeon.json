@@ -1,0 +1,14 @@
+{
+  "start": {
+    "text": [
+      "You wake up on a cold concrete floor.",
+      "A single bulb hums overhead. There are two ways out."
+    ],
+    "commands": ["look"],
+    "look": [
+      "A narrow room. A dark hallway to the east, a heavy steel door to the north."
+    ],
+    "choices": [],
+    "ending": true
+  }
+}

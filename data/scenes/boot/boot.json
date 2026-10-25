@@ -1,0 +1,13 @@
+{
+  "boot": {
+    "text": ["Establish link with INTERLOPER."],
+    "commands": [],
+    "choices": [{ "text": "INTERLOPER_01", "goto": "interloper01_connect" }]
+  },
+
+  "interloper01_connect": {
+    "text": ["Please enter PASSCODE for INTERLOPER_01:", ""],
+    "commands": ["code"],
+    "choices": [{ "text": "BACK", "goto": "boot" }]
+  }
+}
