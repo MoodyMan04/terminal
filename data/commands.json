@@ -1,0 +1,24 @@
+{
+  "help": {
+    "aliases": ["?", "h"],
+    "usage": "help",
+    "description": "You may call for help. Do you want to hear an answer here?",
+    "always": true
+  },
+  "clear": {
+    "aliases": ["cls"],
+    "usage": "clear",
+    "description": "Clear the screen. New beginnings.",
+    "always": true
+  },
+  "code": {
+    "aliases": [],
+    "usage": "code <code>",
+    "description": "Enter a code you wrote down. Be mindful."
+  },
+  "look": {
+    "aliases": ["l"],
+    "usage": "look",
+    "description": "Look around again. Perhaps you'll spot something new."
+  }
+}
