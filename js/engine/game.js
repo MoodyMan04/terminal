@@ -12,7 +12,7 @@ let codes = {};
 let at = null;
 let current = null;
 
-const api = { look, enterCode, allowedCommands };
+const api = { repeat, code, look, allowedCommands };
 
 export function init(data) {
   config = data.config;
@@ -90,15 +90,15 @@ function allowedCommands() {
   return current.commands || [];
 }
 
-// Look Command Function: prints "Look" text and choices again.
-async function look() {
+// Repeat Command Function: prints Room text and choices again. Always available.
+async function repeat() {
   terminal.print("");
-  await terminal.typeLines(current.look, "system");
+  await terminal.typeLines(current.text, "system");
   printChoices();
 }
 
-// Code Command Function: Checks code and only moves to next Room if Code is correct.
-async function enterCode(entered) {
+// Code Command Function: Checks code and only moves to next Room if Code is correct. Conditionally available.
+async function code(entered) {
   const entry = codes[entered.toUpperCase()];
 
   const matchesAt = (restriction) => {
@@ -118,4 +118,11 @@ async function enterCode(entered) {
   }
 
   await moveTo(entry.goto);
+}
+
+// Look Command Function: prints "Look" text and choices again. Conditionally available.
+async function look() {
+  terminal.print("");
+  await terminal.typeLines(current.look, "system");
+  printChoices();
 }

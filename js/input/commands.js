@@ -7,6 +7,11 @@ let aliasMap = {};
 
 // Mapping of functions to commands.
 const handlers = {
+  // Always Available Commands:
+  clear() {
+    terminal.clear();
+  },
+
   help() {
     terminal.print("");
     terminal.print("Type a number to choose an option.", "system");
@@ -25,21 +30,22 @@ const handlers = {
     terminal.print("");
   },
 
-  look({ game }) {
-    return game.look();
+  repeat({ game }) {
+    return game.repeat();
   },
 
-  clear() {
-    terminal.clear();
-  },
-
+  // Room Conditional Commands:
   code({ args, game }) {
     const entered = args.join(" ").trim();
     if (!entered) {
       terminal.print(`Usage: ${defs.code.usage}`, "error");
       return;
     }
-    return game.enterCode(entered);
+    return game.code(entered);
+  },
+
+  look({ game }) {
+    return game.look();
   },
 };
 

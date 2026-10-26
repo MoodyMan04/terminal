@@ -1,18 +1,24 @@
 {
-  "help": {
-    "aliases": ["?", "h"],
-    "usage": "help",
-    "description": "You may call for help. Do you want to hear an answer here?",
-    "always": true
-  },
   "clear": {
     "aliases": ["cls"],
     "usage": "clear",
-    "description": "Clear the screen. New beginnings.",
+    "description": "Clear the screen, always. New beginnings.",
+    "always": true
+  },
+  "help": {
+    "aliases": ["?", "h"],
+    "usage": "help",
+    "description": "You may call for help, always. Do you want to hear an answer here?",
+    "always": true
+  },
+  "repeat": {
+    "aliases": ["r"],
+    "usage": "repeat",
+    "description": "Repeat the description of a room, always. Are you forgetting something?",
     "always": true
   },
   "code": {
-    "aliases": [],
+    "aliases": ["c"],
     "usage": "code <code>",
     "description": "Enter a code you wrote down. Be mindful."
   },
