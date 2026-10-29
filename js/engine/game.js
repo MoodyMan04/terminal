@@ -40,8 +40,14 @@ export async function handleInput(raw) {
 }
 
 // Game function to move between Scenes and Rooms. Uses TERMINAL to print text from data and ends if it has reached an ending.
-async function moveTo(address) {
+async function moveTo(address, transition) {
   at = resolveAddress(address, at && at.file, scenes);
+
+  if (transition) {
+    terminal.print("");
+    await terminal.typeLines([].concat(transition), "system");
+  }
+
   current = scenes[at.file][at.room];
 
   terminal.print("");
@@ -82,7 +88,8 @@ async function choose(number) {
     return;
   }
 
-  await moveTo(current.choices[number - 1].goto);
+  const choice = current.choices[number - 1];
+  await moveTo(choice.goto, choice.transition);
 }
 
 // Current commands the Room has.
@@ -112,12 +119,7 @@ async function code(entered) {
     return;
   }
 
-  if (entry.text) {
-    terminal.print("");
-    await terminal.typeLines(entry.text);
-  }
-
-  await moveTo(entry.goto);
+  await moveTo(entry.goto, entry.text);
 }
 
 // Look Command Function: prints "Look" text and choices again. Conditionally available.

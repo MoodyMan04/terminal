@@ -111,6 +111,20 @@ function validate({ config, commandDefs, codes, scenes }) {
           add(`${where}: choice ${i + 1} has no "text".`);
         }
         checkAddress(where, `choice ${i + 1}`, choice.goto, file);
+
+        if (choice.transition !== undefined) {
+          const t = choice.transition;
+          const valid =
+            typeof t === "string" ||
+            (Array.isArray(t) &&
+              t.length > 0 &&
+              t.every((line) => typeof line === "string"));
+          if (!valid) {
+            add(
+              `${where}: choice ${i + 1} "transition" must be a string or an array of strings.`,
+            );
+          }
+        }
       });
 
       (room.gives || []).forEach((item, i) => {
