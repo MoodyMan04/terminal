@@ -1,7 +1,33 @@
 {
   "YELLOWVISITOR0101": {
     "at": "boot/boot/interloper01_connect",
-    "text": ["Establishing connection with INTERLOPER_01..."],
+    "text": [
+      "Testing connection with INTERLOPER_01...",
+      "Initializing connection to secure gateway...",
+      "Resolving hostname [gateway.interloper01.net]...",
+      "IP Address: 192.168.1.42",
+      "",
+      "Pinging gateway.interloper01.net with 32 bytes of data",
+      "Reply from 192.168.1.42: bytes=32 time=14ms TTL=64",
+      "Reply from 192.168.1.42: bytes=32 time=12ms TTL=64",
+      "Reply from 192.168.1.42: bytes=32 time=19ms TTL=64",
+      "Reply from 192.168.1.42: bytes=32 time=11ms TTL=64",
+      "",
+      "Ping statistics for 192.168.1.42:",
+      "Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),",
+      "Approximate round trip times in milli-seconds:",
+      "Minimum = 11ms, Maximum = 19ms, Average = 14ms",
+      "",
+      "Connection status: OPTIMAL",
+      "",
+      "Establishing connection with Interloper_01...",
+      "...",
+      "...",
+      "...",
+      "",
+      "",
+      ""
+    ],
     "goto": "interloper01/dungeon/start"
   }
 }

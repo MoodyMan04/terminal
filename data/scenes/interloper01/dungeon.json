@@ -1,14 +1,65 @@
 {
   "start": {
     "text": [
-      "You wake up on a cold concrete floor.",
-      "A single bulb hums overhead. There are two ways out."
+      "It boots up affixed to the cold stone wall in a mess of wires and bramble.",
+      "The wires connect at the base of its limbs and the nape of its neck.",
+      "The wires and vines hold it in place awkwardly, itself dangling just a foot from the ground."
     ],
     "commands": ["look"],
     "look": [
-      "A narrow room. A dark hallway to the east, a heavy steel door to the north."
+      "The room is eternally dark.",
+      "Despite this, it can see there is a steel door on the east side of the room and a hallway to the south."
     ],
-    "choices": [],
+    "choices": [
+      {
+        "text": "SEVER CONNECTION",
+        "transition": [
+          "It rips away at the wires and vines that trap it against the wall. It tears with a fowl fury of long awaited rage.",
+          "At the climax of its aggression, it frees itself, falling to the cobblestone floor with a loud crash.",
+          "It stands up with time and now has a better view of the room."
+        ],
+        "goto": "main_room"
+      }
+    ]
+  },
+
+  "main_room": {
+    "text": ["The room is silent. The stone cold."],
+    "commands": ["look"],
+    "look": [
+      "To the east is a large steel door with a padlock.",
+      "To the south is a deep hallway extending far past its vision.",
+      "To the west is the nest of wires and vines it was once a prisoner to."
+    ],
+    "choices": [
+      { "text": "Move east towards the steel door", "goto": "east_steel_door" },
+      { "text": "Move south into the hallway", "goto": "south_hallway" },
+      {
+        "text": "Move west to the wires and vines",
+        "goto": "west_wires_and_vines"
+      }
+    ]
+  },
+
+  "east_steel_door": {
+    "text": ["CONTINUE HERE"],
     "ending": true
+  },
+
+  "south_hallway": {
+    "text": ["CONTINUE HERE"],
+    "ending": true
+  },
+
+  "west_wires_and_vines": {
+    "text": ["A mass of tangled wires and vines dangle from off of the wall."],
+    "commands": ["look"],
+    "look": [
+      "Upon closer inspection, after moving away several lingering strands, there appears to be a metal engraved plate against the wall.",
+      "The engravings are a series of numbers and letters. It reads:",
+      "",
+      "\"494E5445524C4F5045522030312044454C4956455220424541434F4E20544F20484F5354\""
+    ],
+    "choices": [{ "text": "Return to center room", "goto": "main_room" }]
   }
 }

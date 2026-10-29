@@ -1,12 +1,42 @@
 {
   "boot": {
-    "text": ["Establish link with INTERLOPER."],
+    "text": ["Choose a link to ESTABLISH."],
     "commands": [],
-    "choices": [{ "text": "INTERLOPER_01", "goto": "interloper01_connect" }]
+    "choices": [
+      { "text": "INTERLOPER_01", "goto": "interloper01_connect" },
+      { "text": "INTERLOPER_02", "goto": "interloper02_connect" },
+      { "text": "INTERLOPER_03", "goto": "interloper03_connect" },
+      { "text": "INTERLOPER_04", "goto": "interloper04_connect" },
+      { "text": "GATEWAY", "goto": "gateway_connect" }
+    ]
   },
 
   "interloper01_connect": {
     "text": ["Please enter PASSCODE for INTERLOPER_01:", ""],
+    "commands": ["code"],
+    "choices": [{ "text": "BACK", "goto": "boot" }]
+  },
+
+  "interloper02_connect": {
+    "text": ["Please enter PASSCODE for INTERLOPER_02:", ""],
+    "commands": ["code"],
+    "choices": [{ "text": "BACK", "goto": "boot" }]
+  },
+
+  "interloper03_connect": {
+    "text": ["Please enter PASSCODE for INTERLOPER_03:", ""],
+    "commands": ["code"],
+    "choices": [{ "text": "BACK", "goto": "boot" }]
+  },
+
+  "interloper04_connect": {
+    "text": ["Please enter PASSCODE for INTERLOPER_04:", ""],
+    "commands": ["code"],
+    "choices": [{ "text": "BACK", "goto": "boot" }]
+  },
+
+  "gateway_connect": {
+    "text": ["Please enter PASSCODE for GATEWAY:", ""],
     "commands": ["code"],
     "choices": [{ "text": "BACK", "goto": "boot" }]
   }
